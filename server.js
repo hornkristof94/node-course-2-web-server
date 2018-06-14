@@ -4,7 +4,7 @@ const fs = require('fs');
 
 const port = process.env.PORT || 3000;
 var app = express();
-
+  
 hbs.registerHelper('getCurrentYear', () =>{
   return new Date().getFullYear();
 });
@@ -50,6 +50,13 @@ app.get('/about',(req,res) =>{
   res.render('about.hbs',{
     titleofPage: 'Website - About',
     pageTitle: 'About Page',
+  });
+});
+
+app.get('/project',(req,res) =>{
+  res.render('project.hbs',{
+    titleofPage: 'Website - Project',
+    pageTitle: 'Project Page',
   });
 });
 
